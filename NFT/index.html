@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <div class ="icons">
+    <title>Disealflix</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </div>
+    <script src="movies.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="styles.css"/>
+
+
+
+<script>function getLilNoun(){
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'opensea13.p.rapidapi.com',
+		'X-RapidAPI-Key': 'b2e53878e9msh04cd99d0ad94744p122769jsn3df2c4296d8b'
+	}
+};
+
+const randomNumber = Math.floor((Math.random() * 1000) + 1)
+console.log(randomNumber)
+
+fetch('https://opensea13.p.rapidapi.com/asset/0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B/'+randomNumber+'?include_orders=false', options)
+	.then(response => response.json())
+	.then(response => {const list = response;
+	console.log(response)
+	  const poster = response.image_url
+	  const name = response.name
+	  const linkMaker = response.permalink
+	    const movie = `<li><a href="${linkMaker}" target="_blank"><img src="${poster}"> <h2>${name}</h2></li>`
+	    document.querySelector('.movies').innerHTML = movie;
+  
+	} )
+}</script>
+      <nav>
+      <div class="nav-center">
+
+        <ul class="nav-links">
+          <li><a href="https://diseal.software/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+<body>
+ 
+    <div class="movies"></div>
+        
+  <button onclick="getLilNoun()" style="	background-color: black;
+			color: white ;
+box-sizing: border-box;
+display:flex;
+width:120px;
+    justify-content: center;
+    align-items: center;
+    margin:160px auto;
+    position: absolute;
+    top:50%
+">FInd Random lil Noun</button>
+
+
+</body>
+
+</html>
