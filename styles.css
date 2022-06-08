@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+header {
+  height: 100vh;
+  background: url("background.png");
+  background-size: cover;
+  transition: all 600ms ease-out;
+  opacity: 0;
+}
+
+h1 {
+  color: white;
+  padding-left: 20px;
+  padding-top: 500px;
+  transition: all 600ms ease-out;
+  opacity: 0;
+}
+
+h2,
+h5 {
+  text-align: center;
+}
+
+header::before {
+    opacity: 0;
+}
+
+header::after {
+    opacity: 1;
+}
+
+.defintions {i
+      color: deeppink;
+    }
+
+.section-one {
+  background: #a50686;
+  }
+
+.section-two {
+  background: #a14df9;
+}
+
+ul li {
+  list-style: dotted;
+}
