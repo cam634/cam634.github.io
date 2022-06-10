@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+  <h1> Quiz Time</h1>
+</head>
+<body onload="newQuestion()">
+<fieldset>
+<form>
+<h2 id="Question"></h2>
+<label id="AN0"></label>
+<label id="AN1"></label>
+<label id="AN2"></label>
+<label id="AN3"></label>
+<label><button id="submit" type="button" onclick="checkAnswer()"> Submit </button></label>
+</form>
+</fieldset>
+</body>
+<script>
+const myArray = [
+  {q:"Demonstrate an empty array",
+    a:"myEmptyArray = {};",
+    b:"myEmptyArray = [];",
+    c:"myEmptyArray = ();",
+    d:"myEmptyArray = {[]}",
+    answer:"myEmptyArray = {[]}",
+},
+{
+  q:"Demonstrate an array with 3 strings",
+    a:"myEmptyArray = {};",
+    b:'myEmptyArray = ["test" , "hi", "wrong Answer?"];',
+    c:'myEmptyArray = ("test" , "hi", "wrong Answer?");',
+    d:"myEmptyArray = {[]}",
+    answer:"myEmptyArray = {[]}",
+
+},
+{
+  q:"What is a unique feature of arrays",
+    a:"A neat feature about arrays in JavaScript is that they can hold any type of data, and you can mix-and-match those data types.",
+    b:'test',
+    c:'myEmptyArray = (test , "hi", "wrong Answer?");',
+    d:"myEmptyArray = {[]}",
+    answer:"myEmptyArray = {[]}",
+
+}
+]
+
+console.log(myArray.length)
+let h2Elements= document.getElementById('Question')
+let AN0 = document.getElementById('AN0')
+let AN1 = document.getElementById('AN1')
+let AN2 = document.getElementById('AN2')
+let AN3 = document.getElementById('AN3')
+const keys = myArray.flatMap(Object.keys);
+let count = 0
+
+function newQuestion(){
+  AN0.innerHTML =`<input type="radio" name="test" id="${myArray[count]['a']}"/><span>${myArray[count]['a']}</span>`
+  AN1.innerHTML =`<input type="radio" name="test" id="${myArray[count]['b']}"/><span>${myArray[count]['b']} </span>`
+  AN2.innerHTML =`<input type="radio" name="test" id="${myArray[count]['c']}"/><span>${myArray[count]['c']} </span>`
+  AN3.innerHTML =`<input type="radio" name="test" id="${myArray[count]['d']}"/><span>${myArray[count]['d']}</span>`
+  
+  h2Elements.innerText = myArray[count]['q']
+}
+function checkAnswer(){
+var days = document.getElementsByName('test');
+
+for (let i of days) {
+
+if (i.checked) {
+  if(i.id === myArray[count]['answer']){
+    ++count
+    alert("You got the question right!")
+    newQuestion();
+  } else{
+    alert("Try Again")
+  }
+  }
+}
+}
+console.log(count)
+
+
+</script>
+</html>
