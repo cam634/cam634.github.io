@@ -1,0 +1,27 @@
+[
+  {"q":"Demonstrate an empty array",
+    "a":"myEmptyArray = {};",
+    "b":"myEmptyArray = [];",
+    "c":"myEmptyArray = ();",
+    "d":"myEmptyArray = {[]}",
+    "answer":"myEmptyArray = {[]}"
+},
+{
+  "q":"Demonstrate an array with 3 strings",
+    "a":"myEmptyArray = {};",
+    "b":"myEmptyArray = ['test' , 'hi', 'wrong Answer?']",
+    "c":"myEmptyArray = ('test' , 'hi', 'wrong Answer?');",
+    "d":"myEmptyArray = {[]}",
+    "answer":"myEmptyArray = {[]}"
+
+},
+{
+  "q":"What is a unique feature of arrays",
+    "a":"A neat feature about arrays in JavaScript is that they can hold any type of data, and you can mix-and-match those data types.",
+    "b":"test",
+    "c":"myEmptyArray = ('test' , 'hi', 'wrong Answer?');",
+    "d":"myEmptyArray = {[]}",
+    "answer":"myEmptyArray = {[]}"
+
+}
+]
