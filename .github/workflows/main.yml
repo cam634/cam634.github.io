@@ -14,7 +14,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_folder: ''
+        source_folder: 'cam634.github.io/Webpages'
         destination_repo: 'cam634/Practice'
         user_email: 'cam6352@gmail.com'
         user_name: 'cam634'
