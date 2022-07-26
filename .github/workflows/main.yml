@@ -1,5 +1,3 @@
-name: Push File
-
 on: push
 
 jobs:
@@ -9,13 +7,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Pushes test folder
-      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_folder: 'cam634.github.io/Webpages'
+        source_file: 'Webpages'
         destination_repo: 'cam634/Practice'
+        destination_folder: 'test-dir'
         user_email: 'cam6352@gmail.com'
         user_name: 'cam634'
-        commit_msg: '[GHA] Update the test files.'
+        commit_message: 'A custom message for the commit'
